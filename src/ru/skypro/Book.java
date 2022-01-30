@@ -1,10 +1,11 @@
 package ru.skypro;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Book {
     private final String titleBook;
-    private Author author;
+    private final Author author;
     private int publicationYear;
 
     public Book(String titleBook, Author author, int publicationYear) {
@@ -32,6 +33,25 @@ public class Book {
             return;
         }
         this.publicationYear = publicationYear;
+    }
+
+    @Override
+    public String toString() {
+        return "titleBook{" +
+                "Title Book='" + titleBook + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object a) {
+        if (this == a) return true;
+        if (a == null || getClass() != a.getClass()) return false;
+        return Objects.equals(publicationYear, titleBook);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titleBook, publicationYear);
     }
 }
 
