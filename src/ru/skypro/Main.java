@@ -1,12 +1,11 @@
 package ru.skypro;
 
-import java.sql.SQLOutput;
-
 public class Main {
 
 
     public static void main(String[] args) {
-        Book potter = new Book("Harry Potter", new Author("Joan ", "Roaling"), 1997);
+
+        Book potter = new Book("Harry Potter", new Author("Joan", "Roaling"), 1997);
         potter.setPublicationYear(2021);
         System.out.println("Название книги " + potter.getTitleBook());
         System.out.println("Год публикации " + potter.getPublicationYear());
@@ -16,7 +15,5 @@ public class Main {
         System.out.println("Название книги " + potterTwo.getTitleBook());
         System.out.println("Год публикации " + potterTwo.getPublicationYear());
         System.out.println("Автор " + potterTwo.getAuthor().getAuthorFullName());
-        System.out.println("author and year Equal is " + potter.equals(potterTwo));
-        System.out.println("Hash equal is "+ (potter.hashCode() == potterTwo.hashCode()));
-}
+    }
 }

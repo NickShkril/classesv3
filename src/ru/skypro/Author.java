@@ -1,9 +1,6 @@
 package ru.skypro;
 
-import java.util.Objects;
-
 public class Author {
-    private static int ID;
     private final String authorFirstName;
     private final String authorLastName;
 
@@ -13,37 +10,14 @@ public class Author {
     }
 
     public String getAuthorFirstName() {
-        return this.authorFirstName;
+        return authorFirstName;
     }
 
     public String getAuthorLastName() {
-        return this.authorLastName;
+        return authorLastName;
     }
 
     public String getAuthorFullName() {
-       return this.authorFirstName + authorLastName;
-   }
-
-    @Override
-    public String toString() {
-        return "Author{" +
-                "firstName='" + authorFirstName + '\'' +
-                ", lastName='" + authorLastName + '\'' +
-                '}';
+        return authorFirstName + authorLastName;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Author author = (Author) o;
-        return Objects.equals(authorFirstName, author.authorFirstName) && Objects.equals(authorLastName, author.authorLastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(authorFirstName, authorLastName);
-    }
-
 }
-
