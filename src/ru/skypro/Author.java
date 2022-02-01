@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Author {
     private static int ID;
     private final String authorFirstName;
+
     private final String authorLastName;
 
     public Author(String authorFirstName, String authorLastName) {
@@ -25,11 +26,6 @@ public class Author {
     }
 
     @Override
-    public String toString() {
-        return "Author: " + authorFirstName + " " + authorLastName;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -40,6 +36,11 @@ public class Author {
     @Override
     public int hashCode() {
         return Objects.hash(authorFirstName, authorLastName);
+    }
+
+    @Override
+    public String toString() {
+        return "Author: " + authorFirstName + " " + authorLastName;
     }
 
 }
